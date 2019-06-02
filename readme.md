@@ -2,7 +2,7 @@
 
 > Get the part of a word that rhymes with other words
 
-Uses the CMU Pronouncing Dictionary (2MB) to get the rhyming part of a word's pronounciation. This can be used to check if words rhyme with each other, or group together words that rhyme.
+Uses the CMU Pronouncing Dictionary (4MB) to get the rhyming part of a word's pronounciation. This can be used to check if words rhyme with each other, or group together words that rhyme.
 
 
 ## Install
