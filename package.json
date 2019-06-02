@@ -1,0 +1,41 @@
+{
+	"name": "rhyming-part",
+	"version": "0.0.0",
+	"description": "Get the part of a word that rhymes with other words",
+	"license": "MIT",
+	"repository": "f-a-r-a-z/rhyming-part",
+	"author": {
+		"name": "Faraz",
+		"url": "github.com/f-a-r-a-z"
+	},
+	"engines": {
+		"node": ">=6"
+	},
+	"scripts": {
+		"test": "ava && xo"
+	},
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"rhymes",
+		"rhyming",
+		"rhyme",
+		"phoneme",
+		"part",
+		"phonemes",
+		"stress",
+		"group",
+		"cmu",
+		"dictionary",
+		"pronounciation",
+		"syllable"
+	],
+	"dependencies": {
+		"cmu-pronouncing-dictionary": "^1.0.3"
+	},
+	"devDependencies": {
+		"ava": "^1.4.1",
+		"xo": "^0.24.0"
+	}
+}
