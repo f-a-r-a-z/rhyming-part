@@ -9,7 +9,7 @@
 		"url": "github.com/f-a-r-a-z"
 	},
 	"engines": {
-		"node": ">=6"
+		"node": ">=8"
 	},
 	"scripts": {
 		"test": "ava && xo"
