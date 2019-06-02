@@ -38,3 +38,27 @@ test('Word without primary stress', t => {
 test('Words that rhyme have same rhyming part', t => {
 	t.true(rhymingPart('sweet') === rhymingPart('treat'));
 });
+
+test('Empty string', t => {
+	t.is(rhymingPart(''), '');
+});
+
+test('Get multiple pronounciations', t => {
+	t.deepEqual(rhymingPart('climate', {multiple: true}), ['AY1 M AH0 T', 'AY1 M IH0 T']);
+});
+
+test('Get multiple pronounciations of a word without multiple returns single value array', t => {
+	t.deepEqual(rhymingPart('clicked', {multiple: true}), ['IH1 K T']);
+});
+
+test('Multiple pronounciations with same rhyming part return only unique rhyming parts', t => {
+	t.deepEqual(rhymingPart('climatologist', {multiple: true}), ['AA1 L AH0 JH IH0 S T']);
+});
+
+test('Multiple pronounciations with non-existent word', t => {
+	t.deepEqual(rhymingPart('bahbsajgajhgs', {multiple: true}), []);
+});
+
+test('Multiple pronounciations with empty string', t => {
+	t.deepEqual(rhymingPart('', {multiple: true}), []);
+});

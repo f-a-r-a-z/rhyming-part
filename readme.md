@@ -22,6 +22,21 @@ rhymingPart('Hello');
 
 rhymingPart('Below');
 //=> 'OW1'
+
+rhymingPart('Treat');
+//=> 'IY1 T'
+
+rhymingPart('Sweet');
+//=> 'IY1 T'
+
+rhymingPart('ajhakjhksa');
+//=> ''
+
+rhymingPart('Taxes', {multiple: true});
+//=> ['AE1 K S AH0 Z', 'AE1 K S IH0 Z']
+
+rhymingPart('uahoahja', {multiple: true});
+//=> []
 ```
 
 
@@ -34,6 +49,17 @@ rhymingPart('Below');
 Type: `string`
 
 The word to get the rhyming part from.
+
+#### options
+
+Type: `object`
+
+##### multiple
+
+Type: `boolean`<br>
+Default: `false`
+
+If `true`, returns an array of unique rhyming parts for all pronounciations of the word.
 
 
 ## License
