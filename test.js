@@ -35,6 +35,10 @@ test('Word without primary stress', t => {
 	t.is(rhymingPart('orkut'), 'UH2 T');
 });
 
+test('Word without primary stress or secondary stress', t => {
+	t.is(rhymingPart('whats'), '');
+});
+
 test('Words that rhyme have same rhyming part', t => {
 	t.true(rhymingPart('sweet') === rhymingPart('treat'));
 });
