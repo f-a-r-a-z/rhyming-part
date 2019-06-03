@@ -23,7 +23,7 @@ rhymingPart('Hello');
 rhymingPart('Below');
 //=> 'OW1'
 
-rhymingPart('Treat');
+rhymingPart('treat');
 //=> 'IY1 T'
 
 rhymingPart('Sweet');
@@ -34,6 +34,9 @@ rhymingPart('ajhakjhksa');
 
 rhymingPart('Taxes', {multiple: true});
 //=> ['AE1 K S AH0 Z', 'AE1 K S IH0 Z']
+
+rhymingPart('taped', {multiple: true});
+//=> ['EY1 P T']
 
 rhymingPart('uahoahja', {multiple: true});
 //=> []
