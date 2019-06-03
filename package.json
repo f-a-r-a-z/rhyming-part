@@ -1,6 +1,6 @@
 {
 	"name": "rhyming-part",
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"description": "Get the part of a word that rhymes with other words",
 	"license": "MIT",
 	"repository": "f-a-r-a-z/rhyming-part",
