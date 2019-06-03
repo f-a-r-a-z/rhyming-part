@@ -41,7 +41,7 @@ module.exports = (word, options = {}) => {
 	return [...rhymingPartSet];
 };
 
-function getRhymingPart(lowerCaseWord) {
+const getRhymingPart = lowerCaseWord => {
 	const pronounciation = pronounciations[lowerCaseWord] || '';
 	const stresses = pronounciation.split(' ');
 	const searchStress = pronounciation.includes('1') ? '1' : '2';
