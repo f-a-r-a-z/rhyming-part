@@ -53,4 +53,4 @@ const getRhymingPart = lowerCaseWord => {
 	}
 
 	return '';
-}
+};
