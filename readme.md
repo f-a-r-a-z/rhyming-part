@@ -26,6 +26,9 @@ rhymingPart('Below');
 rhymingPart('treat');
 //=> 'IY1 T'
 
+rhymingPart('Would you like a treat?');
+//=> 'IY1 T'
+
 rhymingPart('Sweet');
 //=> 'IY1 T'
 
@@ -51,7 +54,7 @@ rhymingPart('uahoahja', {multiple: true});
 
 Type: `string`
 
-The word to get the rhyming part from.
+The word to get the rhyming part from. Uses the last word from the input.
 
 #### options
 

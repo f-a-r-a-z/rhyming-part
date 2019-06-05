@@ -1,6 +1,7 @@
 'use strict';
 
 const pronounciations = require('cmu-pronouncing-dictionary');
+const extractwords = require('extractwords');
 
 const defaults = {
 	multiple: false
@@ -16,20 +17,21 @@ module.exports = (word, options = {}) => {
 		...options
 	};
 
-	const lowerCaseWord = word.toLowerCase();
-	const basicPronounciationRhymingPart = getRhymingPart(lowerCaseWord);
+	const words = extractwords(word, {lowercase: true});
+	const lastWord = words[words.length - 1] || '';
+	const rhymingPart = getRhymingPart(lastWord);
 
 	if (!options.multiple) {
-		return basicPronounciationRhymingPart;
+		return rhymingPart;
 	}
 
-	if (!basicPronounciationRhymingPart) {
+	if (!rhymingPart) {
 		return [];
 	}
 
-	const rhymingParts = [basicPronounciationRhymingPart];
+	const rhymingParts = [rhymingPart];
 	for (let i = 1; i < 10; i++) {
-		const rhymingPart = getRhymingPart(`${lowerCaseWord}(${i})`);
+		const rhymingPart = getRhymingPart(`${lastWord}(${i})`);
 		if (!rhymingPart) {
 			break;
 		}
@@ -41,8 +43,8 @@ module.exports = (word, options = {}) => {
 	return [...rhymingPartSet];
 };
 
-const getRhymingPart = lowerCaseWord => {
-	const pronounciation = pronounciations[lowerCaseWord] || '';
+const getRhymingPart = word => {
+	const pronounciation = pronounciations[word] || '';
 	const stresses = pronounciation.split(' ');
 	const searchStress = pronounciation.includes('1') ? '1' : '2';
 

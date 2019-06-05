@@ -27,8 +27,12 @@ test('More complex word', t => {
 	t.is(rhymingPart('minisupercomputers'), 'UW1 P ER0 K AH2 M P Y UW2 T ER0 Z');
 });
 
-test('Multiple words returns nothing', t => {
-	t.is(rhymingPart('Hi how are you'), '');
+test('Multiple words returns the last word', t => {
+	t.is(rhymingPart('Hi how are you'), 'UW1');
+});
+
+test('Multiple words with noisy input', t => {
+	t.is(rhymingPart('I .,19u2   love 910i31 the 19801 climate$!@ *#! 9'), 'AY1 M AH0 T');
 });
 
 test('Word without primary stress', t => {
@@ -65,4 +69,12 @@ test('Multiple pronounciations with non-existent word', t => {
 
 test('Multiple pronounciations with empty string', t => {
 	t.deepEqual(rhymingPart('', {multiple: true}), []);
+});
+
+test('Multiple pronounciations with multiple words in input', t => {
+	t.deepEqual(rhymingPart('I love the climate', {multiple: true}), ['AY1 M AH0 T', 'AY1 M IH0 T']);
+});
+
+test('Multiple pronounciations with multiple noisy words in input', t => {
+	t.deepEqual(rhymingPart('I 21876  love123 the##3 892798 !@!1climate!!!! ..', {multiple: true}), ['AY1 M AH0 T', 'AY1 M IH0 T']);
 });
