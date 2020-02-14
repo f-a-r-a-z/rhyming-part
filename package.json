@@ -32,7 +32,7 @@
 		"syllable"
 	],
 	"dependencies": {
-		"cmu-pronouncing-dictionary": "^1.0.3",
+		"cmu-pronouncing-dictionary": "^2.0.0",
 		"extractwords": "^1.1.1"
 	},
 	"devDependencies": {
